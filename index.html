@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI WORLD TOUR｜自動化の基本設計</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/deck.css">
+<link rel="stylesheet" href="assets/local.css">
+<noscript><style>html,body{height:auto!important}body{overflow:auto!important}.stage{position:static!important;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 0}.slide{position:relative!important;left:auto!important;top:auto!important;margin:0!important;visibility:visible!important;transform:none!important;flex:none}.st{opacity:1!important}.cover mark{background-size:100% 100%!important}.cover .cv-iso .l2,.cover .cv-iso .l3{opacity:1!important}</style></noscript>
+</head>
+<body>
+<div class="stage">
+
+
+<section class="slide cover">
+  <img class="cv-logo" src="images/makaseru-logo-black.png" alt="MAKASERU">
+  <p class="cv-series">AI WORLD TOUR</p>
+  <div class="cv-title">
+    <h1 class="hl">自動化の<br><mark>基本設計</mark></h1>
+    <p class="cv-lead">4つの部品　SSOT　Git　PC を閉じても動かす</p>
+  </div>
+  <div class="cv-stack" aria-hidden="true">
+    <div class="cv-iso">
+      <img class="l1" src="images/cover/c1.png" alt="">
+      <img class="l2" src="images/cover/c2.png" alt="">
+      <img class="l3" src="images/cover/c3.png" alt="">
+      <i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i>
+    </div>
+  </div>
+  <div class="cv-foot">
+    <ol class="cv-index">
+      <li><b>01</b>4つの部品</li><li><b>02</b>SSOT</li><li><b>03</b>Git</li><li><b>04</b>PC を閉じても動かす</li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="slide door qmark">
+  <div class="body">
+    <h2 class="hl">自動化って<br>何から考えればいい？</h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl"><mark>4つの部品</mark>を<br>順に決める</h2>
+  </div>
+  <p class="pno" data-ch="はじめに"></p>
+</section>
+
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">01</p>
+    <h2 class="hl">自動化の<br>4つの部品</h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">はじめに</p>
+  <div class="body">
+    <h2 class="hl">自動化と聞くと<mark>何が</mark>思い浮かびますか？</h2>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">例</p><p class="k">工場のロボット</p><p class="d">同じ動きを<br>くり返す</p></div>
+        <div class="card st"><p class="no">例</p><p class="k">Excel のマクロ</p><p class="d">ボタン1つで<br>表を整える</p></div>
+        <div class="card st"><p class="no">例</p><p class="k">自動返信</p><p class="d">メールが届いたら<br>すぐに返す</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">こうなったら</p>
+  <div class="body">
+    <h2 class="hl">こうなったら<mark>いいと思いませんか？</mark></h2>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">朝</p><p class="k">PC を開くと</p><p class="d">今日の予定と天気が<br>まとまって届いている</p></div>
+        <div class="card st"><p class="no">見積もり</p><p class="k">依頼が来たら</p><p class="d">下書きが<br>もうできている</p></div>
+        <div class="card st"><p class="no">在庫</p><p class="k">減ってきたら</p><p class="d">発注の時期を<br>知らせてくれる</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">4つの部品</p>
+  <div class="body">
+    <h2 class="hl">どんな自動化も<mark>4つの部品</mark>でできている</h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01</p><p class="k">トリガー</p><p class="d">動き出す<br>きっかけ</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02</p><p class="k">ソース元</p><p class="d">材料を<br>取ってくる場所</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03</p><p class="k">処理を<br>する場所</p><p class="d">材料を<br>作り変える場所</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">04</p><p class="k">届け先</p><p class="d">できたものを<br>届ける場所</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">名前と役割</p>
+  <div class="body">
+    <h2 class="hl">4つの部品の<mark>名前と役割</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>部品</th><th>役割</th><th>例</th></tr>
+        <tr class="st"><td>トリガー</td><td>いつ 何が起きたら動き出すか</td><td>毎朝7時になったら</td></tr>
+        <tr class="st"><td>ソース元</td><td>材料（データ）を取ってくる場所</td><td>天気予報のページ</td></tr>
+        <tr class="st"><td>処理する場所</td><td>材料を作り変える所（AI が働く）</td><td>3行にまとめる</td></tr>
+        <tr class="st"><td>届け先</td><td>できたものを届ける場所</td><td>スマホ　Slack</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill" src="images/ill/puzzled.png" alt="パソコンの前で首をかしげて考える人">
+      <div class="bubble"><p class="lbl">よくある声</p><p class="say">とはいえ 名前だけだと<br>ピンとこないですよね</p></div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">レストランで言うと</p>
+  <div class="body">
+    <h2 class="hl">伝票が入り 冷蔵庫から出して<br><mark>作って運ぶ</mark></h2>
+    <div class="fig">
+      <div class="cards ill4">
+        <div class="card st"><img class="ill" src="images/ill/ticket.png" alt="注文の伝票をキッチンのレールに留める店員"><p class="k">伝票</p><p class="d">トリガー</p></div>
+        <div class="card st"><img class="ill" src="images/ill/fridge.png" alt="冷蔵庫から食材を出す"><p class="k">冷蔵庫</p><p class="d">ソース元</p></div>
+        <div class="card st"><img class="ill" src="images/ill/kitchen.png" alt="コンロで料理する"><p class="k">キッチン</p><p class="d">処理する場所</p></div>
+        <div class="card st"><img class="ill" src="images/ill/table.png" alt="お客さんのテーブルに料理を置く"><p class="k">テーブル</p><p class="d">届け先</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl"><mark>トリガー</mark>がなければ<br>何も動かない</h2>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">トリガーの種類</p>
+  <div class="body">
+    <h2 class="hl">トリガーは<mark>4種類</mark></h2>
+    <div class="fig">
+      <div class="cards four">
+        <div class="card st"><p class="no">01</p><p class="k">時間</p><p class="d">毎朝7時に<br>毎月1日に</p></div>
+        <div class="card st"><p class="no">02</p><p class="k">出来事</p><p class="d">メールが届いたら<br>ファイルが来たら</p></div>
+        <div class="card st"><p class="no">03</p><p class="k">変化</p><p class="d">値段が下がったら<br>基準を割ったら</p></div>
+        <div class="card st"><p class="no">04</p><p class="k">人の合図</p><p class="d">ボタンを押したら<br>話しかけたら</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">トリガーを置く場所</p>
+  <div class="body">
+    <h2 class="hl">トリガーは<mark>いつも起きている所</mark>に置く</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/local_cloud.png" alt="夜、閉じて眠っているノート PC と、雲の上で明かりがついて動き続けるサーバー"><p class="k">閉じた PC は動けない</p></div>
+        <div class="col hot"><p class="lbl">いつも起きている所</p><p class="k">クラウドに置く</p>
+          <ul><li>GitHub Actions</li><li>Claude のルーティン</li><li>違いと選び方は 4章で</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ソース元</p>
+  <div class="body">
+    <h2 class="hl">ソース元は<mark>新しくないと</mark>意味がない</h2>
+    <p class="note">同じ材料からは 同じ結果しか出てこない</p>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">例</p><p class="k">Web のページ</p><p class="d">天気予報<br>お店の商品ページ</p></div>
+        <div class="card st"><p class="no">例</p><p class="k">予定と表</p><p class="d">カレンダー<br>スプレッドシート</p></div>
+        <div class="card st"><p class="no">例</p><p class="k">写真とメール</p><p class="d">レシートの写真<br>届いたメール</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">処理する場所</p>
+  <div class="body">
+    <h2 class="hl">処理する場所で 材料に<mark>意味</mark>を持たせる</h2>
+    <p class="note">AI が働くのは ここ</p>
+    <div class="fig">
+      <div class="cards four">
+        <div class="card st"><p class="no">01</p><p class="k">まとめる</p><p class="d">長い文章を<br>3行に</p></div>
+        <div class="card st"><p class="no">02</p><p class="k">比べる</p><p class="d">昨日と今日を<br>並べる</p></div>
+        <div class="card st"><p class="no">03</p><p class="k">決める</p><p class="d">基準を超えたか<br>見分ける</p></div>
+        <div class="card st"><p class="no">04</p><p class="k">形を変える</p><p class="d">表を図に<br>写真を文字に</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">届け先</p>
+  <div class="body">
+    <h2 class="hl">届け先は<mark>毎日見る場所</mark>に</h2>
+    <div class="fig">
+      <div class="ngok">
+        <div class="panel"><span class="tag ng">NG</span>
+          <div class="mini center"><p class="m-h">誰も開かない<br>フォルダに保存</p><p class="m-n">できても 気づかれない</p></div></div>
+        <div class="arrow">→</div>
+        <div class="panel"><span class="tag ok">OK</span>
+          <div class="mini center"><p class="m-h">毎朝見る<br>Slack に届く</p><p class="m-n">LINE　メール　Slack</p></div></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">例1 朝の天気と予定</p>
+  <div class="body">
+    <h2 class="hl">毎朝7時に<mark>傘がいるか</mark>がスマホに届く</h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step"><p class="lbl">トリガー</p><p class="k">毎朝7時</p><p class="d">置き場所は<br>4章で</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">ソース元</p><p class="k">天気予報<br>今日の予定</p><p class="d">Web とカレンダー</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">処理する場所</p><p class="k">AI が<br>まとめる</p><p class="d">傘　服　出る時刻<br>を3行で</p></div>
+        <div class="to">→</div>
+        <div class="step hot"><p class="lbl">届け先</p><p class="k">スマホ</p><p class="d">LINE に届く</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">例2 値下がりを見張る</p>
+  <div class="body">
+    <h2 class="hl">欲しい物が<mark>値下がりしたら</mark>知らせる</h2>
+    <p class="note">Playwright はブラウザを自動で動かす道具</p>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step"><p class="lbl">トリガー</p><p class="k">毎晩9時</p><p class="d">見に行って<br>違ったら動く</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">ソース元</p><p class="k">お店の<br>商品ページ</p><p class="d">Playwright が<br>見に行く</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">処理する場所</p><p class="k">昨日と<br>比べる</p><p class="d">値段が下がった<br>時だけ先へ</p></div>
+        <div class="to">→</div>
+        <div class="step hot"><p class="lbl">届け先</p><p class="k">メール</p><p class="d">商品名と<br>新しい値段</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">まず4つの部品を書く<br>道具は<mark>あとで選ぶ</mark></h2>
+  </div>
+  <p class="pno" data-ch="01 自動化の4つの部品"></p>
+</section>
+
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">02</p>
+    <h2 class="hl">正本は<br>1か所に</h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill" src="images/ill/puzzled.png" alt="パソコンの前で首をかしげて考える人">
+      <div class="bubble"><p class="lbl">よくある声</p><p class="say">そもそも<br>正本って何？</p></div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">正本とは</p>
+  <div class="body">
+    <h2 class="hl">正本は<mark>これが正しい</mark>と決めた元の1つ</h2>
+    <p class="note">コピーはいくつあってもいい　直すのは正本だけ</p>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">図面</p><p class="k">最新の原図</p><p class="d">現場には<br>コピーを配る</p></div>
+        <div class="card st"><p class="no">単価</p><p class="k">単価表の最新版</p><p class="d">見積もりは<br>ここを見る</p></div>
+        <div class="card st"><p class="no">予定</p><p class="k">共有カレンダー</p><p class="d">家族は<br>ここを見る</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">なぜ正本の話をするのか</p>
+  <div class="body">
+    <h2 class="hl">自動化は<mark>確かめずに</mark>配る</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col"><p class="lbl">人が見るなら</p><p class="k">見比べて気づく</p>
+          <ul><li>手帳とカレンダーが違う</li><li>「あれ？」と手が止まる</li><li>正しい方を聞きに行ける</li></ul></div>
+        <div class="col hot"><p class="lbl">自動化だと</p><p class="k">決めた1か所だけ読む</p>
+          <ul><li>手帳にだけ書いた予定は届かない</li><li>古い時刻のまま毎朝届く</li><li>誰も気づかないまま続く</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">予定が3か所にある家</p>
+  <div class="body">
+    <h2 class="hl">予定が<mark>3か所</mark>にあると<br>どれが正しいか分からない</h2>
+    <div class="fig">
+      <div class="pair ill2">
+        <div class="col"><img class="ill" src="images/ill/ssot_ng.png" alt="壁のカレンダーとスマホと手帳で予定が食い違う家族"><p class="k">3か所</p></div>
+        <div class="col hot"><img class="ill" src="images/ill/ssot_ok.png" alt="共有カレンダー1つを家族みんなで見る"><p class="k">1か所</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">1か所にする理由</p>
+  <div class="body">
+    <h2 class="hl">1か所にする理由は<mark>3つ</mark></h2>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">01</p><p class="k">迷わない</p><p class="d">どれが正しいか<br>すぐ分かる</p></div>
+        <div class="card st"><p class="no">02</p><p class="k">直し漏れがない</p><p class="d">直すのは<br>1か所で1回</p></div>
+        <div class="card st"><p class="no">03</p><p class="k">配り間違えない</p><p class="d">AI と仕組みが<br>正しい方を読む</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide kwp">
+  <div class="body">
+    <h2 class="kw"><span class="ab">SSOT</span>= <mark>Single Source of Truth</mark></h2>
+  </div>
+  <div class="def">
+    <p class="lbl">定義</p>
+    <p class="tx">すべてのデータは、1か所だけで管理（編集）する。<br>ほかの場所は、そこを参照するか、そこから写すだけにする。</p>
+  </div>
+  <p class="src">出典: Wikipedia「Single source of truth」（英語版の定義を訳したもの） https://en.wikipedia.org/wiki/Single_source_of_truth</p>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">SSOT の3つの約束</p>
+  <div class="body">
+    <h2 class="hl">正本を決めて<mark>そこだけ直す</mark></h2>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card st"><p class="no">01</p><p class="k">決める</p><p class="d">正本はここと<br>決める</p></div>
+        <div class="card st"><p class="no">02</p><p class="k">そこだけ直す</p><p class="d">ほかの場所で<br>書き直さない</p></div>
+        <div class="card st"><p class="no">03</p><p class="k">見に行く</p><p class="d">ほかは<br>正本を読むだけ</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ローカルとクラウド</p>
+  <div class="body">
+    <h2 class="hl">正本は<mark>クラウド</mark>に置く</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/ssot_cloud.png" alt="雲の上の正本の書類から、3人の机の PC へ点線が伸びている"><p class="k">手元は写し</p></div>
+        <div class="col hot"><p class="lbl">置き場所で役目を分ける</p><p class="k">正本はみんなの所に</p>
+          <ul><li>手元の PC は自分用の写し</li><li>クラウドはみんなの正本</li><li>直したらクラウドに戻す</li><li>自動化はクラウドを読む</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">自動化と正本</p>
+  <div class="body">
+    <h2 class="hl">ソース元が2つあると<br><mark>AI は迷う</mark></h2>
+    <div class="fig">
+      <div class="ngok">
+        <div class="panel"><span class="tag ng">NG</span>
+          <div class="mini center"><p class="m-h">古い手帳を<br>読んでしまう</p><p class="m-n">間違った予定が 毎朝届く</p></div></div>
+        <div class="arrow">→</div>
+        <div class="panel"><span class="tag ok">OK</span>
+          <div class="mini center"><p class="m-h">正本1か所<br>だけを読む</p><p class="m-n">直せば 次の朝から正しくなる</p></div></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">直すのは正本だけ<br>コピーは<mark>読むだけ</mark></h2>
+  </div>
+  <p class="pno" data-ch="02 正本は1か所に"></p>
+</section>
+
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">03</p>
+    <h2 class="hl">戻せるから<br>任せられる</h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ゲームのセーブ</p>
+  <div class="body">
+    <h2 class="hl">Git は<mark>セーブポイント</mark>の仕組み</h2>
+    <p class="note">いつでも 前の地点に戻れる</p>
+    <div class="fig">
+      <img class="ill big" src="images/ill/savepoint.png" alt="道に並んだセーブポイントの旗と、前の旗を指す人">
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">セーブの実例</p>
+  <div class="body">
+    <h2 class="hl">直す前に<mark>セーブ</mark>しておく</h2>
+    <p class="note">開発の現場では 小さく直すたびに 何を変えたか一言そえてセーブする</p>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01</p><p class="k">動いている</p><p class="d">見積もりの<br>計算ツール</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02</p><p class="k">セーブ</p><p class="d">直す前に<br>コミット</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03</p><p class="k">直したら</p><p class="d">金額が<br>おかしくなった</p></div>
+        <div class="to">→</div>
+        <div class="step hot st"><p class="lbl">04</p><p class="k">戻す</p><p class="d">直す前の<br>セーブに戻る</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ブランチ</p>
+  <div class="body">
+    <h2 class="hl">ブランチは<mark>別の道</mark>で試すこと</h2>
+    <p class="note">本線（main）を壊さずに 新しいことを試せる</p>
+    <div class="fig">
+      <img class="ill big" src="images/ill/branch.png" alt="本線の道から分かれた脇道で作業し、先で本線に合流する">
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ブランチの図</p>
+  <div class="body">
+    <h2 class="hl">ブランチを切って試し<mark>本線に合流</mark>する</h2>
+    <div class="fig">
+      <svg class="gitg" viewBox="0 0 1120 400" role="img" aria-label="本線の道から脇道が分かれ、脇道で2回セーブしてから本線に合流する道の絵">
+        <path d="M 380 140 C 450 140 440 310 540 310 L 700 310 C 800 310 790 140 860 140" stroke="#f3dc7a" stroke-width="34" fill="none" stroke-linecap="round"/>
+        <path d="M 380 140 C 450 140 440 310 540 310 L 700 310 C 800 310 790 140 860 140" stroke="#fff" stroke-width="3" fill="none" stroke-dasharray="14 12"/>
+        <path d="M 20 140 L 1100 140" stroke="#cfcfca" stroke-width="44" fill="none"/>
+        <path d="M 20 140 L 1100 140" stroke="#fff" stroke-width="4" fill="none" stroke-dasharray="18 14"/>
+        <g stroke="#1a1a1a" stroke-width="4"><line x1="150" y1="118" x2="150" y2="58"/><line x1="280" y1="118" x2="280" y2="58"/><line x1="590" y1="293" x2="590" y2="233"/><line x1="680" y1="293" x2="680" y2="233"/><line x1="1000" y1="118" x2="1000" y2="58"/></g>
+        <g fill="#1a1a1a"><path d="M 152 58 L 188 70 L 152 82 Z"/><path d="M 282 58 L 318 70 L 282 82 Z"/><path d="M 592 233 L 628 245 L 592 257 Z"/><path d="M 682 233 L 718 245 L 682 257 Z"/><path d="M 1002 58 L 1038 70 L 1002 82 Z"/></g>
+        <circle cx="860" cy="140" r="20" fill="#1a1a1a"/>
+        <text x="20" y="40" font-size="26" font-weight="900" fill="#1a1a1a">main（本線＝正本）</text>
+        <text x="215" y="212" font-size="22" font-weight="700" fill="#555" text-anchor="middle">コミット（セーブ）</text>
+        <text x="400" y="262" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="end">ブランチを切る</text>
+        <text x="635" y="378" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="middle">脇道で試してセーブ</text>
+        <text x="860" y="40" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="middle">マージ（本線に合流）</text>
+      </svg>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">開発の現場の1週間</p>
+  <div class="body">
+    <h2 class="hl">急ぎの直しは<mark>別の脇道</mark>で先に合流</h2>
+    <div class="fig">
+      <svg class="gitg" viewBox="0 0 1120 420" role="img" aria-label="新しい機能の脇道で作業中に、急ぎの直しを別の脇道で行い先に合流する図">
+        <path d="M 40 210 L 1080 210" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+        <path d="M 200 210 C 260 210 250 340 330 340 L 820 340 C 900 340 890 210 950 210" stroke="#9a9a96" stroke-width="6" fill="none" stroke-dasharray="14 10"/>
+        <path d="M 480 210 C 530 210 520 90 590 90 L 640 90 C 700 90 690 210 740 210" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+        <circle cx="100" cy="210" r="18" fill="#fff" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="200" cy="210" r="18" fill="#fff" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="400" cy="340" r="18" fill="#cfcfca" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="560" cy="340" r="18" fill="#cfcfca" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="720" cy="340" r="18" fill="#cfcfca" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="615" cy="90" r="20" fill="#f3dc7a" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="740" cy="210" r="22" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="950" cy="210" r="22" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="5"/>
+        <text x="40" y="180" font-size="24" font-weight="900" fill="#1a1a1a">main（いつも動いている本線）</text>
+        <text x="560" y="400" font-size="24" font-weight="900" fill="#555" text-anchor="middle">脇道1　請求書も作れるようにする（数日かかる）</text>
+        <text x="615" y="48" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="middle">脇道2　消費税の計算がずれていた（急ぎ）</text>
+        <text x="760" y="176" font-size="22" font-weight="700" fill="#1a1a1a">先に合流</text>
+        <text x="970" y="176" font-size="22" font-weight="700" fill="#1a1a1a">あとで合流</text>
+      </svg>
+    </div>
+  </div>
+  <p class="src">出典: Pro Git「Basic Branching and Merging」（急ぎの直しを別のブランチで行う例） https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</p>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">ブランチの使い分け</p>
+  <div class="body">
+    <h2 class="hl">ブランチは<mark>目的ごと</mark>に切る</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>こんなとき</th><th>ブランチの使い方</th></tr>
+        <tr class="st"><td>新しい機能を作る</td><td>機能ごとに脇道を切り できたら本線に合流</td></tr>
+        <tr class="st"><td>動いている物に不具合</td><td>直す用の脇道を切り 急いで直して先に合流</td></tr>
+        <tr class="st"><td>案が2つで迷う</td><td>2本の脇道で作って比べ 良い方だけ合流</td></tr>
+        <tr class="st"><td>合流の前に見てほしい</td><td>プルリクエストで もう1人が確かめてから合流</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: GitHub Docs「GitHub flow」 https://docs.github.com/en/get-started/using-github/github-flow ／「Branches」</p>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">Git の操作</p>
+  <div class="body">
+    <h2 class="hl">覚える操作は<mark>5つ</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>操作</th><th>やること</th><th>たとえ</th></tr>
+        <tr class="st"><td>コミット</td><td>ここまでを記録する</td><td>セーブする</td></tr>
+        <tr class="st"><td>ブランチを切る</td><td>本線から分かれて試す</td><td>脇道を作る</td></tr>
+        <tr class="st"><td>マージ</td><td>試した道を本線に戻す</td><td>合流する</td></tr>
+        <tr class="st"><td>プッシュ</td><td>記録を GitHub に送る</td><td>倉庫に預ける</td></tr>
+        <tr class="st"><td>プル</td><td>GitHub の最新を受け取る</td><td>倉庫から持ってくる</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill" src="images/ill/puzzled.png" alt="パソコンの前で首をかしげて考える人">
+      <div class="bubble"><p class="lbl">よくある声</p><p class="say">Git と GitHub って<br>何が違うの？</p></div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">Git と GitHub</p>
+  <div class="body">
+    <h2 class="hl">Git は手元の記録帳<br>GitHub は<mark>みんなの倉庫</mark></h2>
+    <div class="fig">
+      <img class="ill big" src="images/ill/git_github.png" alt="左の机で記録帳にセーブの旗を立てる人と、右の雲の上の共有の倉庫。間を矢印が行き来する">
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">Git と GitHub の違い</p>
+  <div class="body">
+    <h2 class="hl">GitHub は倉庫に<mark>道具</mark>が付いている</h2>
+    <div class="fig">
+      <svg class="gitg" viewBox="0 0 1120 420" role="img" aria-label="左に手元の PC の Git、右にクラウドの GitHub。上の矢印がプッシュ、下の矢印がプル">
+        <rect x="30" y="40" width="400" height="340" rx="16" fill="#fff" stroke="#1a1a1a" stroke-width="4"/>
+        <text x="230" y="92" font-size="26" font-weight="900" fill="#555" text-anchor="middle">あなたの PC（ローカル）</text>
+        <text x="230" y="170" font-size="64" font-weight="900" fill="#1a1a1a" text-anchor="middle">Git</text>
+        <path d="M 90 236 L 370 236" stroke="#1a1a1a" stroke-width="5"/>
+        <circle cx="110" cy="236" r="14" fill="#fff" stroke="#1a1a1a" stroke-width="4"/>
+        <circle cx="190" cy="236" r="14" fill="#fff" stroke="#1a1a1a" stroke-width="4"/>
+        <circle cx="270" cy="236" r="14" fill="#fff" stroke="#1a1a1a" stroke-width="4"/>
+        <circle cx="350" cy="236" r="14" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="4"/>
+        <text x="230" y="300" font-size="24" font-weight="700" fill="#1a1a1a" text-anchor="middle">記録する道具（セーブと脇道）</text>
+        <text x="230" y="340" font-size="22" font-weight="700" fill="#555" text-anchor="middle">ネットが無くても使える</text>
+        <rect x="690" y="40" width="400" height="340" rx="16" fill="#fff" stroke="#1a1a1a" stroke-width="4"/>
+        <text x="890" y="92" font-size="26" font-weight="900" fill="#555" text-anchor="middle">GitHub（クラウド）</text>
+        <rect x="760" y="116" width="260" height="78" rx="10" fill="#f3dc7a" stroke="#1a1a1a" stroke-width="4"/>
+        <text x="890" y="168" font-size="34" font-weight="900" fill="#1a1a1a" text-anchor="middle">倉庫（正本）</text>
+        <text x="890" y="250" font-size="24" font-weight="700" fill="#1a1a1a" text-anchor="middle">仲間と共有する</text>
+        <text x="890" y="294" font-size="24" font-weight="700" fill="#1a1a1a" text-anchor="middle">合流の前に見てもらう</text>
+        <text x="890" y="338" font-size="24" font-weight="700" fill="#1a1a1a" text-anchor="middle">自動で動かす（Actions）</text>
+        <path d="M 450 150 L 660 150" stroke="#1a1a1a" stroke-width="6"/>
+        <path d="M 660 150 L 640 138 L 640 162 Z" fill="#1a1a1a"/>
+        <text x="555" y="132" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="middle">プッシュ</text>
+        <path d="M 670 270 L 460 270" stroke="#1a1a1a" stroke-width="6"/>
+        <path d="M 460 270 L 480 258 L 480 282 Z" fill="#1a1a1a"/>
+        <text x="565" y="312" font-size="24" font-weight="900" fill="#1a1a1a" text-anchor="middle">プル</text>
+      </svg>
+    </div>
+  </div>
+  <p class="src">出典: GitHub Docs「What is GitHub?」 https://docs.github.com/en/get-started/start-your-journey/what-is-github</p>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">チームで進める</p>
+  <div class="body">
+    <h2 class="hl">プッシュとプルで<mark>同じ正本</mark>を見る</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/team.png" alt="離れた2人が、空に浮かぶ1つの倉庫と荷物をやり取りする"><p class="k">倉庫は1つ</p></div>
+        <div class="col"><p class="lbl">2人で進めるとき</p><p class="k">送って　受け取る</p>
+          <ul><li>Aさんが直してプッシュ</li><li>倉庫（GitHub）が新しくなる</li><li>Bさんがプルで受け取る</li><li>2人とも同じ正本を見ている</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">チームの1日</p>
+  <div class="body">
+    <h2 class="hl">受け取って 分かれて 記録して<mark>送る</mark></h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01</p><p class="k">プル</p><p class="d">倉庫の最新を<br>受け取る</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02</p><p class="k">ブランチ</p><p class="d">脇道を切って<br>作業する</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03</p><p class="k">コミット</p><p class="d">こまめに<br>セーブする</p></div>
+        <div class="to">→</div>
+        <div class="step hot st"><p class="lbl">04</p><p class="k">プッシュ</p><p class="d">倉庫に送って<br>本線に合流</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">Obsidian のメモを共有する</p>
+  <div class="body">
+    <h2 class="hl">Obsidian のメモも<mark>一部だけ</mark>共有できる</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/share.png" alt="鍵のかかった大きな本棚から、数冊だけを共有の棚に移す"><p class="k">見せたい棚だけ</p></div>
+        <div class="col"><p class="lbl">GitHub で管理すると</p><p class="k">全部は渡さない</p>
+          <ul><li>メモ全体は自分の倉庫（非公開）</li><li>見せたいフォルダだけ別の倉庫に</li><li>その倉庫に相手を招待する</li><li>見せない物は外す設定にする</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">なぜ自動化に Git か</p>
+  <div class="body">
+    <h2 class="hl">仕組みの<mark>指示書</mark>も倉庫に置く</h2>
+    <p class="note">トリガーの設定も AI への指示も ただの文字のファイル</p>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01</p><p class="k">指示書を<br>書き直す</p><p class="d">「平日9時に」<br>「この文を」</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02</p><p class="k">コミットと<br>プッシュ</p><p class="d">記録して<br>倉庫に送る</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03</p><p class="k">倉庫で<br>動き出す</p><p class="d">時間が来たら<br>GitHub で動く</p></div>
+        <div class="to">→</div>
+        <div class="step hot st"><p class="lbl">04</p><p class="k">壊れたら<br>昨日に戻す</p><p class="d">セーブを<br>呼び出すだけ</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">Claude への頼み方</p>
+  <div class="body">
+    <h2 class="hl">コマンドは覚えない<br><mark>言葉で頼む</mark></h2>
+    <div class="fig">
+<div class="prompt fit">「ここまでを記録して」　　　　　　　 → コミット
+「新しいブランチを作って そこで試して」 → ブランチを切る
+「試した内容を main に合流して」　　　 → マージ
+「GitHub に送って」　　　　　　　　　　 → プッシュ
+「GitHub の最新を取ってきて」　　　　　 → プル
+「昨日の状態に戻して」　　　　　　　　　 → 戻す</div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">危ない言葉</p>
+  <div class="body">
+    <h2 class="hl">この3つは<mark>頼む前に止まる</mark></h2>
+    <div class="fig">
+      <div class="cards sm">
+        <div class="card"><p class="no">強制プッシュ</p><p class="k">上書きして送る</p><p class="d">倉庫にある<br>ほかの人の記録が消える</p></div>
+        <div class="card"><p class="no">全部巻き戻す</p><p class="k">記録の前に戻す</p><p class="d">記録していない変更が<br>消える</p></div>
+        <div class="card"><p class="no">公開にする</p><p class="k">倉庫を公開する</p><p class="d">世界中の誰でも<br>見られる</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">Git に入れないもの</p>
+  <div class="body">
+    <h2 class="hl"><mark>鍵</mark>は Git に入れない</h2>
+    <p class="note">一度記録すると 消しても履歴に残る</p>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/vault.png" alt="鍵を棚に置かず金庫に預ける人"><p class="k">鍵は金庫へ</p></div>
+        <div class="col"><p class="lbl">入れないもの</p><p class="k">記録の外に置く</p>
+          <ul><li>パスワードや合言葉</li><li>サービスの鍵や受け口の URL</li><li>人の名前や住所</li><li>大きな写真や動画</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">記録しておけば<br>AI に<mark>任せても怖くない</mark></h2>
+  </div>
+  <p class="pno" data-ch="03 戻せるから任せられる"></p>
+</section>
+
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">04</p>
+    <h2 class="hl">PC を閉じても<br>動かす</h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">GitHub Actions とは</p>
+  <div class="body">
+    <h2 class="hl">倉庫に置いた<mark>指示書</mark>どおりに動く</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic"><img class="ill" src="images/ill/actions.png" alt="雲の上の作業台で、ロボットの腕がチェックリストどおりに作業し、紙飛行機がスマホへ飛ぶ"><p class="k">GitHub のパソコンで動く</p></div>
+        <div class="col"><p class="lbl">どんな仕組みか</p><p class="k">きっかけが来たら<br>手順を実行</p>
+          <ul><li>指示書は倉庫に置く</li><li>自分の PC は閉じていてよい</li><li>非公開でも月2,000分まで無料</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: GitHub Docs「GitHub Actions billing」 https://docs.github.com/en/billing/concepts/product-billing/github-actions ／「Events that trigger workflows」</p>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">GitHub Actions でできること</p>
+  <div class="body">
+    <h2 class="hl">きっかけは<mark>倉庫の出来事</mark>と時間</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>きっかけ</th><th>動かすこと（開発の現場の例）</th></tr>
+        <tr class="st"><td>送ったら（push）</td><td>テストを自動で回し 壊れた変更にすぐ気づく</td></tr>
+        <tr class="st"><td>合流したら</td><td>サイトやアプリを公開する（デプロイ）</td></tr>
+        <tr class="st"><td>決めた時間に（schedule）</td><td>集計 通知 ページの見回り（Playwright）</td></tr>
+        <tr class="st"><td>問い合わせが来たら（issues）</td><td>印を付ける 担当を割り振る</td></tr>
+        <tr class="st"><td>ボタンを押したら</td><td>好きなときに手で動かす（workflow_dispatch）</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: GitHub Docs「Events that trigger workflows」 https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows</p>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">GitHub Actions の注意</p>
+  <div class="body">
+    <h2 class="hl">GitHub に置くトリガーは<mark>3つ</mark>に気をつける</h2>
+    <div class="fig">
+      <div class="cards sm">
+        <div class="card"><p class="no">01</p><p class="k">時刻は<br>世界標準時</p><p class="d">日本時間を<br>指定して書く</p></div>
+        <div class="card"><p class="no">02</p><p class="k">混むと<br>遅れる</p><p class="d">ぴったりの時刻に<br>動くとは限らない</p></div>
+        <div class="card"><p class="no">03</p><p class="k">手動の<br>ボタンもある</p><p class="d">試すときは<br>押して動かす</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: GitHub Docs「Events that trigger workflows」「Workflow syntax」 https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows</p>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">PC を閉じても動く場所</p>
+  <div class="body">
+    <h2 class="hl">動かす場所は<mark>3つ</mark>から選ぶ</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>動かす場所</th><th>道具の例</th><th>PC を閉じたら</th></tr>
+        <tr class="st"><td>自分の PC</td><td>デスクトップの予定タスク</td><td>止まる</td></tr>
+        <tr class="st"><td>GitHub のパソコン</td><td>GitHub Actions</td><td>動く</td></tr>
+        <tr class="st"><td>Anthropic のクラウド</td><td>Claude Code のルーティン<br>Cowork の予定タスク</td><td>動く</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: Claude Code Docs「Routines」 https://code.claude.com/docs/en/routines ／「Desktop scheduled tasks」／Claude ヘルプ「Schedule recurring tasks in Cowork」</p>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill" src="images/ill/puzzled.png" alt="パソコンの前で首をかしげて考える人">
+      <div class="bubble"><p class="lbl">よくある声</p><p class="say">Claude のルーティンと<br>何が違うの？</p></div>
+    </div>
+  </div>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">GitHub Actions とルーティン</p>
+  <div class="body">
+    <h2 class="hl">決まった手順か<mark>毎回考える</mark>か</h2>
+    <p class="note">左が GitHub Actions　右が Claude のルーティン</p>
+    <div class="fig">
+      <img class="ill big" src="images/ill/fixed_vs_ai.png" alt="左はレシピどおりに同じ箱を並べるロボット、右は資料を読んで考え、1枚を選ぶ人">
+    </div>
+  </div>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">違いの一覧</p>
+  <div class="body">
+    <h2 class="hl">同じ毎朝でも<mark>中身</mark>が違う</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th></th><th>GitHub Actions</th><th>Claude のルーティン</th></tr>
+        <tr class="st"><td>動くもの</td><td>書いた手順をそのとおり</td><td>Claude が毎回考えて動く</td></tr>
+        <tr class="st"><td>頼み方</td><td>指示書（YAML）</td><td>ふつうの文</td></tr>
+        <tr class="st"><td>得意なこと</td><td>同じ処理を確実に 安く</td><td>読んでまとめる 判断する</td></tr>
+        <tr class="st"><td>費用</td><td>無料枠で足りることが多い</td><td>プランの使用量から引かれる</td></tr>
+        <tr class="st"><td>気をつけること</td><td>時刻が少し遅れることがある</td><td>試験提供中 Slack は本人の名前で投稿</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: Claude Code Docs「Routines」 https://code.claude.com/docs/en/routines ／GitHub Docs「GitHub Actions billing」</p>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">仕分け</p>
+  <div class="body">
+    <h2 class="hl">やりたいことで<mark>道具を選ぶ</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>やりたいこと</th><th>向いている道具</th></tr>
+        <tr class="st"><td>決まった文を 決まった時間に送る</td><td>GitHub Actions</td></tr>
+        <tr class="st"><td>ページを読んで 要点を毎朝届けてほしい</td><td>ルーティン　Cowork の予定タスク</td></tr>
+        <tr class="st"><td>手元の PC のファイルを毎日整理する</td><td>デスクトップの予定タスク</td></tr>
+        <tr class="st"><td>今すぐ1回だけ頼みたい</td><td>ふつうに Claude に頼む（人の合図）</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="04 PC を閉じても動かす"></p>
+</section>
+
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill" src="images/ill/puzzled.png" alt="パソコンの前で首をかしげて考える人">
+      <div class="bubble"><p class="lbl">よくある声</p><p class="say">設定画面を自分で触るのは<br>ちょっと不安…</p></div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">ワークの進め方</p>
+  <div class="body">
+    <h2 class="hl">設計は人 操作は<mark>AI</mark></h2>
+    <div class="fig">
+      <div class="flow">
+        <div class="step st"><p class="lbl">01 見る</p><p class="k">AI が<br>画面を動かす</p><p class="d">明日の天気を<br>調べてもらう</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02 設計する</p><p class="k">設計図を<br>4つで書く</p><p class="d">トリガーから<br>届け先まで</p></div>
+        <div class="to">→</div>
+        <div class="step hot st"><p class="lbl">03 任せる</p><p class="k">作るのは<br>AI に任せる</p><p class="d">人はログインと<br>鍵だけ</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">AI に画面を操作させる道具</p>
+  <div class="body">
+    <h2 class="hl">画面の操作も<mark>AI に任せられる</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>道具</th><th>どう動くか</th><th>使える所</th></tr>
+        <tr class="st"><td>Playwright MCP</td><td>専用のブラウザを開いて操作</td><td>Claude Code に足す<br>（Node.js が要る）</td></tr>
+        <tr class="st"><td>Claude in Chrome</td><td>いつもの Chrome を操作</td><td>有料プランすべて</td></tr>
+        <tr class="st"><td>Computer use</td><td>画面のアプリ全体を操作</td><td>デスクトップアプリ<br>（Pro と Max）</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: microsoft/playwright-mcp https://github.com/microsoft/playwright-mcp ／Claude ヘルプ「Getting started with Claude in Chrome」／Claude Code Docs「Desktop」</p>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">体験 AI にブラウザを動かしてもらう</p>
+  <div class="body">
+    <h2 class="hl">明日の天気を<mark>AI に調べてもらう</mark></h2>
+    <div class="fig">
+<div class="prompt fit">Playwright で気象庁の天気予報のページを開いて、
+神奈川県東部の明日の天気と降水確率を調べてください。
+傘がいるかどうかも含めて、3行で教えてください。</div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">AI が読んだページ</p>
+  <div class="body">
+    <h2 class="hl">開く 探す 読むを<mark>AI が代わりに</mark></h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col pic wide"><img class="ill" src="images/news/jma_kanagawa_east.png" alt="気象庁の天気予報のページ。神奈川県東部の今夜・明日・明後日の天気と降水確率の表"><p class="k">気象庁の天気予報</p></div>
+        <div class="col"><p class="lbl">4つの部品で見ると</p><p class="k">いまは手で頼んだ</p>
+          <ul><li>トリガー：人の合図</li><li>ソース元：気象庁</li><li>処理する場所：Claude</li><li>届け先：この画面</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: 気象庁「天気予報（神奈川県）」 https://www.jma.go.jp/bosai/forecast/#area_type=offices&amp;area_code=140000 （2026年10月14日17時の発表を撮影）</p>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide src2">
+  <p class="ttl">任せる範囲</p>
+  <div class="body">
+    <h2 class="hl">ログインと鍵は<mark>人が入れる</mark></h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col"><p class="lbl">AI に任せる</p><p class="k">画面の操作</p>
+          <ul><li>ページを開いて押していく</li><li>倉庫やファイルを作る</li><li>指示書を書いてセーブする</li><li>ボタンを押して試す</li></ul></div>
+        <div class="col hot"><p class="lbl">人がやる</p><p class="k">鍵とログイン</p>
+          <ul><li>ログイン（パスワード）</li><li>鍵を金庫に入れる</li><li>公開と送信の最後の OK</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: Claude ヘルプ「Use Claude in Chrome safely」 https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely</p>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">今日の課題</p>
+  <div class="body">
+    <h2 class="hl">毎日届いてほしい情報を<mark>Slack に流す</mark></h2>
+    <p class="note">例　天気予報　業界ニュースの新着　自社サイトのお知らせ</p>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01 決める</p><p class="k">毎日ほしい<br>情報を1つ</p><p class="d">それが<br>ソース元</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02 設計する</p><p class="k">設計図を<br>4つで書く</p><p class="d">トリガーは<br>毎朝の時刻</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03 任せる</p><p class="k">AI に<br>作らせる</p><p class="d">GitHub Actions<br>人はログインと鍵</p></div>
+        <div class="to">→</div>
+        <div class="step hot st"><p class="lbl">04 確かめる</p><p class="k">ボタンで<br>1回送る</p><p class="d">Slack に<br>届けば完成</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">設計図の見本</p>
+  <div class="body">
+    <h2 class="hl">毎朝 明日の天気が<mark>Slack に届く</mark></h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step"><p class="lbl">トリガー</p><p class="k">毎朝7時</p><p class="d">GitHub Actions</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">ソース元</p><p class="k">気象庁の<br>天気予報</p><p class="d">神奈川県東部</p></div>
+        <div class="to">→</div>
+        <div class="step"><p class="lbl">処理する場所</p><p class="k">形を整える</p><p class="d">天気と降水確率を<br>1行に</p></div>
+        <div class="to">→</div>
+        <div class="step hot"><p class="lbl">届け先</p><p class="k">Slack</p><p class="d">自分用の<br>チャンネル</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">AI に作ってもらう</p>
+  <div class="body">
+    <h2 class="hl">設計図を渡して<mark>作ってもらう</mark></h2>
+    <div class="fig">
+<div class="prompt fit sm">次の設計で、GitHub Actions の仕組みを作ってください。
+トリガー：毎朝7時（日本時間）　ソース元：（決めた情報）
+処理：（例：新着の見出しを3件取り出す）　届け先：Slack
+
+Slack の受け口の URL は、倉庫の Secrets に
+SLACK_WEBHOOK_URL という名前で私が入れます。
+倉庫づくりとファイルの追加は Playwright で画面を操作してください。
+ログインと鍵の入力が要る場面では、止まって私に頼んでください。
+最後に Run workflow で1回動かして確かめてください。</div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ワーク"></p>
+</section>
+
+
+<section class="slide">
+  <p class="ttl">今日のまとめ</p>
+  <div class="body">
+    <h2 class="hl">今日の話を<mark>ふり返る</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>章</th><th>覚えておくこと</th></tr>
+        <tr class="st"><td>01 4つの部品</td><td>トリガー ソース元 処理する場所 届け先を順に決める</td></tr>
+        <tr class="st"><td>02 正本は1か所に</td><td>直すのは正本だけ　正本はクラウドに置く</td></tr>
+        <tr class="st"><td>03 戻せるから任せられる</td><td>直す前にセーブ　鍵は金庫　強制プッシュは止まる</td></tr>
+        <tr class="st"><td>04 PC を閉じても動かす</td><td>決まった手順は GitHub Actions　毎回考えるならルーティン</td></tr>
+        <tr class="st"><td>ワーク</td><td>設計は人 操作は AI　ログインと鍵は人が入れる</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">宿題</p>
+  <div class="body">
+    <h2 class="hl">1週間で 自分の仕事を<mark>設計図</mark>にする</h2>
+    <div class="fig">
+      <div class="cards sm one-line">
+        <div class="card"><p class="no">01</p><p class="k">見つける</p><p class="d">「またこれか」と<br>思った仕事</p></div>
+        <div class="card"><p class="no">02</p><p class="k">分ける</p><p class="d">4つの部品と<br>ソース元の正本</p></div>
+        <div class="card"><p class="no">03</p><p class="k">任せる</p><p class="d">設計図を AI に<br>渡して作ってもらう</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">今日の答え</p>
+  <div class="body">
+    <h2 class="hl">自動化は<mark>4つの部品</mark>から</h2>
+    <div class="fig">
+      <div class="ans3">
+        <div class="a"><p class="lbl">答え</p><p class="k">4つの部品を順に決める。ソース元は正本1か所に、仕組みは Git で記録する</p></div>
+        <div class="rs">
+          <div class="r"><p class="no">理由 01</p><p class="k">トリガーが無ければ<br>何も動かない</p></div>
+          <div class="r"><p class="no">理由 02</p><p class="k">ソース元が2つだと<br>AI が迷う</p></div>
+          <div class="r"><p class="no">理由 03</p><p class="k">記録があれば<br>壊しても戻せる</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">まず<mark>4つの部品</mark></h2>
+  </div>
+  <p class="pno"></p>
+</section>
+
+</div>
+<script src="assets/deck.js"></script>
+</body>
+</html>
